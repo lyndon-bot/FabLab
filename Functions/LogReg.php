@@ -60,6 +60,16 @@ function login(){
        $_SESSION['Username'] = $grB['Username'];
        $_SESSION['Perm'] = $grB['Permission'];
    
+         $U_ID = $grB['U_ID'];
+         date_default_timezone_set("America/New_York");
+         $TimeIn = date('H:i:s');
+         $Today = date('Y-m-d');
+        
+        if(mysqli_num_rows(mysqli_query($connect,"select * from Log where Date = '$Today' and U_ID = '$U_ID' and TimeOut = '00:00:00'")) == 0){
+            
+          mysqli_query($connect,"INSERT INTO Log(U_ID, TimeIn, TimeOut, Visit, Reason, Date) VALUES ('$U_ID','$TimeIn','NULL','NULL','NULL','$Today')");
+        
+        }
    
        header('location: ../Pages/Home.php');
        
@@ -70,6 +80,39 @@ function login(){
     
 }
 
+function checkin(){
+   
+  include "conn.php"; 
+
+  $U_ID =  $_SESSION['U_ID'];
+  date_default_timezone_set("America/New_York");
+  $TimeIn = date('H:i:s');
+  $Today = date('Y-m-d');
+ 
+  mysqli_query($connect,"INSERT INTO Log(U_ID, TimeIn, TimeOut, Visit, Reason, Date) VALUES ('$U_ID','$TimeIn','NULL','NULL','NULL','$Today')");
+  header('location: Logout.php');
+
+    
+}
+
+function checkout(){
+    
+  include "conn.php";
+  session_start();
+  date_default_timezone_set("America/New_York");
+  $TimeOut = date('H:i:s');
+  $U_ID =  $_SESSION['U_ID'];
+  $Visit = $_POST['Visit'];
+  $Reason = $_POST['Reason'];
+  $Today = date('Y-m-d');
+  echo $Visit, $Reason, $U_ID,$Today, $TimeOut;
+  mysqli_query($connect,"update Log set TimeOut = '$TimeOut', Visit = '$Visit', Reason = '$Reason' where Date = '$Today' and U_ID = '$U_ID' and TimeOut = '00:00:00'");
+  header('location: Logout.php');
+    
+    
+    
+}
+
 
 switch($submit){
     
@@ -77,6 +120,11 @@ case 1: login();
     break;
 case 2: register();
     break;
+case 3: checkin();
+    break;
+case 4: checkout();
+    break;
+
 }
 
 
