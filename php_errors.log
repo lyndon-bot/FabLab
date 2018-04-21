@@ -173,3 +173,15 @@
 [21-Apr-2018 17:00:31 UTC] PHP Stack trace:
 [21-Apr-2018 17:00:31 UTC] PHP   1. {main}() /home/ubuntu/workspace/Functions/Logout.php:0
 [21-Apr-2018 17:00:31 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/Functions/Logout.php:8
+[21-Apr-2018 17:37:41 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/Functions/Logout.php on line 8
+[21-Apr-2018 17:37:41 UTC] PHP Stack trace:
+[21-Apr-2018 17:37:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/Functions/Logout.php:0
+[21-Apr-2018 17:37:41 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/Functions/Logout.php:8
+[21-Apr-2018 17:38:21 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/Functions/Logout.php on line 8
+[21-Apr-2018 17:38:21 UTC] PHP Stack trace:
+[21-Apr-2018 17:38:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/Functions/Logout.php:0
+[21-Apr-2018 17:38:21 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/Functions/Logout.php:8
+[21-Apr-2018 17:39:06 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/ubuntu/workspace/Functions/Logout.php on line 8
+[21-Apr-2018 17:39:06 UTC] PHP Stack trace:
+[21-Apr-2018 17:39:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/Functions/Logout.php:0
+[21-Apr-2018 17:39:06 UTC] PHP   2. mysqli_close() /home/ubuntu/workspace/Functions/Logout.php:8
