@@ -63,7 +63,6 @@
                                                                 
                                   $query = mysqli_query($connect,"select * from Visit where TimeOut = '0000-00-00 00:00:00'");
                                   $get = mysqli_fetch_all($query,MYSQLI_ASSOC);
-                                  print_r($get);                
                                   foreach( $get as $get){
                                         echo "<option>" . $get['FName'] . "</option>";
                                   }
@@ -81,7 +80,6 @@
                                                                 
                                   $query = mysqli_query($connect,"select * from Visit where TimeOut = '0000-00-00 00:00:00'");
                                   $get = mysqli_fetch_all($query,MYSQLI_ASSOC);
-                                  print_r($get);                
                                   foreach( $get as $get){
                                         echo "<option>" . $get['LName'] . "</option>";
                                   }

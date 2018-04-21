@@ -59,7 +59,13 @@ function login(){
        $_SESSION['U_ID'] = $grB['U_ID'];
        $_SESSION['Username'] = $grB['Username'];
        $_SESSION['Perm'] = $grB['Permission'];
-   
+       
+        if($_SESSION['Perm'] == 'A'){
+            
+             header('location: ../Pages/Admin.php');
+            
+         }else{
+         
          $U_ID = $grB['U_ID'];
          date_default_timezone_set("America/New_York");
          $TimeIn = date('H:i:s');
@@ -72,7 +78,7 @@ function login(){
         }
    
        header('location: ../Pages/Home.php');
-       
+        }
    }else{
        
        header('location: ../Pages/Login.php?error=1');
