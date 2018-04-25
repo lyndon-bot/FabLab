@@ -104,7 +104,7 @@ include "../Functions/header.php";
                        <form  action="../Functions/LogReg.php" method="post"> 
                       
                         <select class="form-control" name="Visit" required>
-                            <option> Select A Visit Reson</option>
+                            <option> Select A Visit Reason</option>
                             <option>Working On a Project</option>
                             <option>Visiting the Lab</option>
                             <option>Getting a Item Made</option>
