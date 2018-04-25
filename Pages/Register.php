@@ -26,7 +26,7 @@
 					<input class="form-control" placeholder="Last Name" type="text" Name="LName" value="" required><br>
 		
 		            <?php 
-    					if($_GET['error'] == 1){
+    					if(isset($_GET['error']) && $_GET['error'] == 1){
                              echo "<h6 style='color:red;'> Your Username Exists </h6>";
                            } 
                      ?>
@@ -34,7 +34,7 @@
 					<input class="form-control" placeholder="Username" type="text" Name="Username" value="" required><br>
 					
 					<?php 
-    					if($_GET['error'] == 2){
+    					if(isset($_GET['error']) && $_GET['error'] == 2){
                              echo "<h6 style='color:red;'> Your Passwords do not the match </h6>";
                            } 
                      ?>

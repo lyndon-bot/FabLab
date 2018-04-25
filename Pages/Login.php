@@ -23,7 +23,7 @@
               <form  action="../Functions/LogReg.php" method="post"> 
               
      <?php 
-    					if($_GET['error'] == 1){
+    					if(isset($_GET['error']) && $_GET['error'] == 1){
            echo "<h6 style='color:red;'> Your Username or Password is incorrect </h6>";
          } 
      ?>
