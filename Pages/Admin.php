@@ -22,8 +22,7 @@ include "../Functions/header.php";
             include "../Functions/conn.php";
                                                                 
             $query = mysqli_query($connect,"select * from User");
-            $get = mysqli_fetch_all($query,MYSQLI_ASSOC);
-            foreach( $get as $get){
+            while($get = mysqli_fetch_assoc($query)) {
              echo "<tr><td>". $get['FName'] ."</td><td>". $get['LName'] ."</td><td>". $get['Username'] ."</td><td>". $get['Permision'] ."</td></tr>";
              }
             
@@ -57,8 +56,7 @@ include "../Functions/header.php";
             $Today = date('Y-m-d');
          
             $query = mysqli_query($connect,"select * from Log inner join User on User.U_ID = Log.U_ID where Date = '$Today' and TimeOut = '00:00:00' ");
-            $get = mysqli_fetch_all($query,MYSQLI_ASSOC);
-            foreach( $get as $get){
+             while($get = mysqli_fetch_assoc($query)) {
              echo "<tr><td>". $get['FName'] ."</td><td>". $get['LName'] ."</td><td>". $get['Username'] ."</td><td>". $get['TimeIn'] ."</td><td>". $get['TimeOut'] ."</td><td>". $get['Date'] ."</td></tr>";
              }
             
@@ -94,8 +92,7 @@ include "../Functions/header.php";
             $Today = date('Y-m-d');
          
             $query = mysqli_query($connect,"select * from Visit");
-            $get = mysqli_fetch_all($query,MYSQLI_ASSOC);
-            foreach( $get as $get){
+            while($get = mysqli_fetch_assoc($query)) {
              echo "<tr><td>". $get['FName'] ."</td><td>". $get['LName'] ."</td><td>". $get['TimeIn'] ."</td><td>". $get['TimeOut'] ."</td><td>". $get['Organization'] ."</td><td>". $get['vReason'] ."</td></tr>";
              }
             
@@ -130,8 +127,7 @@ include "../Functions/header.php";
             $Today = date('Y-m-d');
          
             $query = mysqli_query($connect,"select * from Log inner join User on User.U_ID = Log.U_ID");
-            $get = mysqli_fetch_all($query,MYSQLI_ASSOC);
-            foreach( $get as $get){
+            while($get = mysqli_fetch_assoc($query)) {
              echo "<tr><td>". $get['FName'] ."</td><td>". $get['LName'] ."</td><td>". $get['Username'] ."</td><td>". $get['TimeIn'] ."</td><td>". $get['TimeOut'] ."</td><td>". $get['Date'] ."</td></tr>";
              }
             

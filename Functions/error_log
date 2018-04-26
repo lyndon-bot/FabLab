@@ -1,0 +1,7 @@
+[25-Apr-2018 13:11:30 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/lyndonbowen/public_html/FabLab/Functions/Logout.php on line 8
+[25-Apr-2018 13:16:10 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/lyndonbowen/public_html/FabLab/Functions/Logout.php on line 8
+[25-Apr-2018 13:17:59 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/lyndonbowen/public_html/FabLab/Functions/Logout.php on line 8
+[25-Apr-2018 10:05:48 America/New_York] PHP Notice:  Undefined index: U_ID in /home/lyndonbowen/public_html/FabLab/Functions/LogReg.php on line 110
+[25-Apr-2018 14:05:48 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/lyndonbowen/public_html/FabLab/Functions/Logout.php on line 8
+[25-Apr-2018 19:59:01 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/lyndonbowen/public_html/FabLab/Functions/Logout.php on line 8
+[25-Apr-2018 20:00:50 UTC] PHP Warning:  mysqli_close() expects exactly 1 parameter, 0 given in /home/lyndonbowen/public_html/FabLab/Functions/Logout.php on line 8
