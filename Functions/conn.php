@@ -1,8 +1,8 @@
 <?php
 
 $host = "localhost";
-$username = "FabLabRoot";
-$password = "Dr3am#16";
+$username = "root";
+$password = "";
 $database = "FabLabDB";
 
 

@@ -27,12 +27,28 @@
 					
 					
 					<input class="form-control" placeholder="Last Name" type="text" Name="LastName" value=""><br>
-					     
+					
+				    <input class="form-control" placeholder="Email" type="email" Name="Email" value=""><br>	     
 					
 					<input class="form-control" placeholder="Organization" type="text" Name="Organization" value=""><br>
 					
 					
-					<input class="form-control" placeholder="Reason" type="text" Name="Reason" value=""><br>
+    				<select class="form-control" name="Reason" required>
+                               
+                               <?php     
+                
+                                    include "../Functions/conn.php";
+                                 
+                                    $query = mysqli_query($connect,"select * from Reason where Status = 'N'");
+                                    while($get = mysqli_fetch_assoc($query)) {
+                                     echo "<option value='". $get['R_ID'] ."'>". $get['Reason'] ."</option>";
+                                     }
+                                    
+                                
+                                
+                                ?>
+                                
+                            </select><br/>
 				
               
                   <button class="form-control btn btn-primary" type="submit" name="submit" value="1">Begin Visit</button>
@@ -41,6 +57,9 @@
               
                 <button class="form-control btn btn-danger" type="submit" data-toggle='modal' data-target='#exampleModal2'>Finish Visit</button>
                 
+                <form class="form-group" action="Register.php">
+                  <button class="form-control btn btn-link " type="submit">Register?</button>
+              </form>
               
               <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
               <div class="modal-dialog" role="document">

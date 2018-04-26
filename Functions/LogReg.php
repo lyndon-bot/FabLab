@@ -11,6 +11,7 @@ function register(){
     $Username = $_POST['Username'];
     $Password = $_POST['Password'];
     $CPassword = $_POST['CPassword'];
+    $Email = $_POST['Email'];
     
     $check = mysqli_query($connect,"select * from User where Username = '$Username'");
     $unum = mysqli_num_rows($check);
@@ -31,7 +32,7 @@ function register(){
       
     $FPassword = md5($Password);
     
-    $query = mysqli_query($connect,"INSERT INTO User (FName, LName, Username, Password, Permission) VALUES ('$FName ','$LName','$Username','$FPassword','U')");
+    $query = mysqli_query($connect,"INSERT INTO User (FName, LName, Username, Password, Permission,Email) VALUES ('$FName ','$LName','$Username','$FPassword','U','$Email')");
     
     login();  
         
@@ -64,16 +65,22 @@ function login(){
             
              header('location: ../Pages/Admin.php');
             
+         }else if($_SESSION['Perm'] == 'D'){
+             
+             header('location: ../Pages/Login.php?error=1');
+             
          }else{
          
          $U_ID = $grB['U_ID'];
          date_default_timezone_set("America/New_York");
          $TimeIn = date('H:i:s');
          $Today = date('Y-m-d');
+      
         
         if(mysqli_num_rows(mysqli_query($connect,"select * from Log where Date = '$Today' and U_ID = '$U_ID' and TimeOut = '00:00:00'")) == 0){
-            
-          mysqli_query($connect,"INSERT INTO Log(U_ID, TimeIn, TimeOut, Visit, Reason, Date) VALUES ('$U_ID','$TimeIn','NULL','NULL','NULL','$Today')");
+        
+          
+          mysqli_query($connect,"INSERT INTO Log(U_ID, TimeIn, TimeOut, Visit, R_ID, Date) VALUES ('$U_ID','$TimeIn','NULL','NULL','NULL','$Today')");
         
         }
    
@@ -95,7 +102,7 @@ function checkin(){
   $TimeIn = date('H:i:s');
   $Today = date('Y-m-d');
  
-  mysqli_query($connect,"INSERT INTO Log(U_ID, TimeIn, TimeOut, Visit, Reason, Date) VALUES ('$U_ID','$TimeIn','NULL','NULL','NULL','$Today')");
+  mysqli_query($connect,"INSERT INTO Log(U_ID, TimeIn, TimeOut, Visit, R_ID, Date) VALUES ('$U_ID','$TimeIn','NULL','NULL','NULL','$Today')");
   header('location: Logout.php');
 
     
@@ -112,7 +119,7 @@ function checkout(){
   $Reason = $_POST['Reason'];
   $Today = date('Y-m-d');
   echo $Visit, $Reason, $U_ID,$Today, $TimeOut;
-  mysqli_query($connect,"update Log set TimeOut = '$TimeOut', Visit = '$Visit', Reason = '$Reason' where Date = '$Today' and U_ID = '$U_ID' and TimeOut = '00:00:00'");
+  mysqli_query($connect,"update Log set TimeOut = '$TimeOut', Visit = '$Visit', R_ID = '$Reason' where Date = '$Today' and U_ID = '$U_ID' and TimeOut = '00:00:00'");
   header('location: Logout.php');
     
     

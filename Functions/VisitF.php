@@ -10,13 +10,14 @@ $FName = $_POST['FirstName'];
 $LName = $_POST['LastName'];
 $Organization = $_POST['Organization'];
 $Reason = $_POST['Reason'];
+$Email = $_POST['Email'];
 
 date_default_timezone_set("America/New_York");
 
 $TimeIn = date('Y-m-d H:i:s');
 
 
-$push = mysqli_query($connect, "insert into Visit (FName,LName,TimeIn,TimeOut,Organization,VReason) values ('$FName','$LName','$TimeIn','0000-00-00 00:00:00','$Organization','$Reason')");
+$push = mysqli_query($connect, "insert into Visit (FName,LName,TimeIn,TimeOut,Organization,R_ID,Email) values ('$FName','$LName','$TimeIn','0000-00-00 00:00:00','$Organization','$Reason','$Email')");
 
 header('Location: ../index.php');
 

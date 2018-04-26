@@ -3,6 +3,11 @@
 session_start();
 include "conn.php";
 
+if(!isset($_SESSION['U_ID'])){
+    
+    header('location: ../index.php');
+}
+
 ?>
 
 <html> 

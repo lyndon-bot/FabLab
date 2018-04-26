@@ -3,6 +3,7 @@
 include "../Functions/header.php";
 
  $U_ID  = $_SESSION['U_ID'];
+ date_default_timezone_set("America/New_York");
  
 ?>
 
@@ -103,16 +104,24 @@ include "../Functions/header.php";
                   <div class="modal-body">
                        <form  action="../Functions/LogReg.php" method="post"> 
                       
-                        <select class="form-control" name="Visit" required>
-                            <option> Select A Visit Reason</option>
-                            <option>Working On a Project</option>
-                            <option>Visiting the Lab</option>
-                            <option>Getting a Item Made</option>
-                            <option>Other</option>
+                        <select class="form-control" name="Reason" required>
+                           
+                           <?php     
+            
+                                include "../Functions/conn.php";
+                             
+                                $query = mysqli_query($connect,"select * from Reason where Status = 'N'");
+                                while($get = mysqli_fetch_assoc($query)) {
+                                 echo "<option value='". $get['R_ID'] ."'>". $get['Reason'] ."</option>";
+                                 }
+                                
+                            
+                            
+                            ?>
                             
                         </select><br/>
                         
-                        <input class="form-control" type="text" placeholder="Please Describe your Visit" name="Reason" required/>
+                        <input class="form-control" type="text" placeholder="Please Describe your Visit" name="Visit" required/>
                         
                   </div>
                   <div class="modal-footer">

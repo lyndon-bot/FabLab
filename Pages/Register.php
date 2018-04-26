@@ -24,6 +24,8 @@
                     <input class="form-control" placeholder="First Name" type="text" Name="FName" value="" required><br>
                      
 					<input class="form-control" placeholder="Last Name" type="text" Name="LName" value="" required><br>
+					
+					<input class="form-control" type="email" placeholder="Email" name="Email" required><br>
 		
 		            <?php 
     					if(isset($_GET['error']) && $_GET['error'] == 1){
@@ -45,6 +47,9 @@
               
                   <button class="form-control btn btn-primary" type="submit" name="submit" value="2">Register</button>
        
+              </form> 
+              <form class="form-group" action="Login.php">
+                  <button class="form-control btn btn-link " type="submit">Already a user?</button>
               </form> 
               
           </div> 

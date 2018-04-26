@@ -37,6 +37,10 @@
        
               </form> 
               
+              <form class="form-group" action="Register.php">
+                  <button class="form-control btn btn-link " type="submit">Register?</button>
+              </form> 
+              
           </div> 
           
         </div>  
